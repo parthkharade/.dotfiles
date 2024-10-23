@@ -1,6 +1,7 @@
 -- INTIALISATION
 vim.cmd('set termguicolors')
 vim.cmd('colorscheme doubletrouble')
+vim.cmd('set clipboard+=unnamedplus')
 -- vim.cmd('CocStop')
 vim.o.number = true
 vim.o.cindent = true
@@ -9,15 +10,14 @@ vim.opt.shiftwidth = 2
 vim.opt.shiftround = true
 vim.opt.expandtab = true
 vim.g.clipboard = {
-    name = 'tmux-clipboard',
+    name = 'win32yank-wsl',
     copy = {
-        ['+'] = 'tmux load-buffer -',
-        ['*'] = 'tmux load-buffer -',
+        ['+'] = 'win32yank.exe -i --crlf',
+        ['*'] = 'win32yank.exe -i --crlf',
     },
     paste = {
-        ['+'] = 'tmux save-buffer -',
-        ['*'] = 'tmux save-buffer -',
+        ['+'] = 'win32yank.exe -o --lf',
+        ['*'] = 'win32yank.exe -o --lf',
     },
 }
-
 vim.cmd('set mouse=')
