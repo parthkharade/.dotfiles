@@ -153,6 +153,18 @@ export PATH=$PATH:/opt/nvim-linux64/bin
 export PATH=$PATH:/usr/local/texlive/2024/bin/x86_64-linux
 export PATH=$PATH:"$HOME"/protobuf/bin
 
+
+# Had to do this for code crafters.
+export VCPKG_ROOT=${HOME}/vcpkg
+
+
+# Settings for Pi Pico SDK
+export PICO_SDK_PATH=${HOME}/pico-sdk
+export picotool_DIR=${HOME}/picotool/picotool
+export PICOTOOL_OVERRIDE_DIR=/mnt/c/Users/Parth\ Kharade/.pico-sdk/picotool/2.0.0/picotool
+alias picotool="/mnt/c/Users/Parth\ Kharade/.pico-sdk/picotool/2.0.0/picotool/picotool.exe"
+
+
 eval "$(zoxide init bash)"
 
 export NVM_DIR="$HOME/.nvm"

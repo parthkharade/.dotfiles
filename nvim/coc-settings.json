@@ -5,7 +5,18 @@
       "rootPatterns": [".git", "compile_commands.json", "compile_flags.txt"],
       "filetypes": ["c", "cpp"],
       "trace.server": "verbose",
-      "args": ["--background-index", "--clang-tidy"],
+      "args": ["--background-index", "--clang-tidy"]
+    },
+    "pyright": {
+      "command": "pyright-langserver",
+      "args": ["--stdio"],
+      "filetypes": ["python"],
+      "rootPatterns": [".git", "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile"]
+    },
+    "texlab": {
+      "command": "texlab",
+      "filetypes": ["tex", "bib"],
+      "rootPatterns": ["*.tex", "*.bib"]
     }
   }
 }
