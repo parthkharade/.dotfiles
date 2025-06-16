@@ -1,7 +1,6 @@
 -- KEY BINDINGS
 vim.keymap.set({'n','v','i'},'<C-q>',':lua toggle_line_numbers()<CR>')
 vim.keymap.set({'n'},'<C-s>',':w<CR><Esc>')
-vim.keymap.set({'n'}, '<leader>p',': lua require("nabla").popup({border = "rounded"})<CR>', {noremap = true, silent = true})
 
 -- FUNCTIONS
 function toggle_line_numbers()

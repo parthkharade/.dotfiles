@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons' -- For fancy file icons
   use 'nvim-lualine/lualine.nvim' -- Status bar in nvim 
   use 'motosir/skel-nvim' -- File Templates
-  use {'nvim-telescope/telescope.nvim', tag = '0.1.6', -- For browsing files and live grep.
+  use {'nvim-telescope/telescope.nvim', tag = '0.1.8', -- For browsing files and live grep. Also needs ripgrep.
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
@@ -32,6 +32,10 @@ return require('packer').startup(function(use)
 
   use 'nvim-treesitter/nvim-treesitter' -- Syntax highlighting, Kinda works
   use {'neoclide/coc.nvim', branch = 'release'} -- Menu Based Completion for Nvim. Kinda Works.
+
+   
+  --- LSP Related Stuff.
+  --------------------------------------------------------------------------------------------------------------
   use {"williamboman/mason.nvim",
     config = function()
       require('mason').setup({})
@@ -47,15 +51,9 @@ return require('packer').startup(function(use)
   }
   --------------------------------------------------------------------------------------------------------------
 
-  use({'MeanderingProgrammer/render-markdown.nvim',-- Render Markdown in nvim.
-    config = function()
-      require('render-markdown').setup({})
-    end,
-  })
   use {"eoh-bse/minintro.nvim", -- Intro screen
     config = function() require("minintro").setup() end
   }
-  -- use 'github/copilot.vim' -- Enable this with caution. Don't when you are learning something new!
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
