@@ -8,26 +8,26 @@ Personal dotfiles for a developer focused on embedded systems (C/C++, Verilog, V
 
 ## Installation
 
-Run `./symlinks.sh` to create symlinks from `.dotfiles/.config/*` into `~/.config/`. It is idempotent and can be re-run safely.
+Run `./setupins.sh` to print full setup instructions including tool installation. Run `./symlinks.sh` to create symlinks — it is idempotent and can be re-run safely.
 
-External dependencies that must be cloned/installed manually (documented as comments in `symlinks.sh`):
+External dependencies that must be cloned/installed manually:
 - Catppuccin tmux plugin: `git clone https://github.com/catppuccin/tmux ~/.local/share/tmux/plugins/catppuccin`
 
 There are no build, lint, or test commands — this is a configuration-only repo.
 
 ## Structure
 
-All configs live under `.config/` and are symlinked to `~/.config/`:
-
 ```
-.config/
-├── nvim/       → ~/.config/nvim
-├── tmux/       → ~/.config/tmux
-├── bash/       → ~/.bashrc (symlinked directly)
-├── lsd/        → ~/.config/lsd
+.dotfiles/
+├── .bashrc          → ~/.bashrc
+├── .zshrc           → ~/.zshrc
+├── .config/
+│   ├── nvim/        → ~/.config/nvim
+│   ├── tmux/        → ~/.config/tmux
+│   └── lsd/         → ~/.config/lsd
+├── symlinks.sh
+└── setupins.sh
 ```
-
-`~/.zshrc` is managed separately (not yet in this repo).
 
 ## Neovim (`.config/nvim/`)
 
@@ -68,9 +68,9 @@ Plugin configs live in `lua/plugin_configs/` with one file per plugin. Adding a 
 
 ## Shell
 
-**Zsh** (`~/.zshrc`) — primary shell on macOS. Catppuccin Mocha prompt, zoxide, `ls` aliased to `lsd`.
+**Zsh** (`.zshrc`) — primary shell on macOS. Catppuccin Mocha prompt, zoxide, `ls` aliased to `lsd`.
 
-**Bash** (`.config/bash/bashrc`) — for Linux environments. Minimal: history settings, basic aliases, PATH for Neovim/TexLive/protobuf/vcpkg, zoxide.
+**Bash** (`.bashrc`) — for Linux environments. Catppuccin Mocha prompt, zoxide, `ls` aliased to `lsd`, PATH for Neovim/TexLive/protobuf/vcpkg.
 
 ## lsd (`.config/lsd/`)
 
